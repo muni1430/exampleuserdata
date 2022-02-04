@@ -5,4 +5,6 @@ node('main'){
      stage('create an ec2instance'){
       sh "aws ec2 run-instances --image-id ami-04505e74c0741db8d --count 1 --instance-type t2.micro --key-name newawskey --subnet-id subnet-03a83a9c26a79aeec --security-group-ids sg-01361c1aff01f515a --user-data file://userdata.txt"
       }
+   }  
+      
     
