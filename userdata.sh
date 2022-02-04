@@ -2,4 +2,3 @@
 sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get install apache2 -y
-echo 'test' > /home/ec2-user/user-data-output.txt
