@@ -2,9 +2,9 @@ node('main'){
     stage('AWS CLI Version'){
         sh "aws --version"
     }
-     stage('create an ec2instance'){
-      sh "aws ec2 run-instances --image-id ami-04505e74c0741db8d --count 1 --instance-type t2.micro --key-name newawskey --subnet-id subnet-03a83a9c26a79aeec --security-group-ids sg-01361c1aff01f515a  +  --user-data \$'" + userdata + "' --region us-east-1"
-      }
+       stage ('creating aclc'){
+           sh "aws autoscaling create-launch-configuration --launch-configuration-name my-lc3-cli --image-id ami-0fb653ca2d3203ac1 --instance-type t2.micro --security-groups " + SecurityGroup + " --key-name " + keyname + " --user-data file://userdata.txt --iam-instance-profile demo_full_access --user-data file://userdata.txt --region us-east-2"
+          }
    }  
       
     
