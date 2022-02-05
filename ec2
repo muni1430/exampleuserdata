@@ -1,8 +1,9 @@
 node('main'){
+stages {
     stage('AWS CLI Version'){
         sh "aws --version"
     }
-    stages {
+    
       stage('cr lb'){
            sh "aws elbv2 create-listener --load-balancer-arn ${jsonitem['LoadBalancers'][0]['LoadBalancerArn']} --protocol HTTP --port 80 --default-actions Type=forward,TargetGroupArn=${jsonitem1['TargetGroups'][0]['TargetGroupArn']} --region us-east-1"
                }
