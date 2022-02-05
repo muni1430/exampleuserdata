@@ -1,5 +1,4 @@
 node('main'){
-stages {
     stage('AWS CLI Version'){
         sh "aws --version"
     }
@@ -15,4 +14,4 @@ stages {
         } 
    }  
       
-    }
+    
